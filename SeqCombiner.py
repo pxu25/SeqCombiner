@@ -1,9 +1,10 @@
+#Bash shell script is easier to write than Python to combine all of files into one file.
 
-# coding: utf-8
+#!/bin/bash
+cat *.seq >> AllSeq.seq
 
-# In[3]:
 
-
+#!/usr/bin/python
 from glob import glob
 for file in glob("416-ADH-*.seq"): # Any combination for the file names
     f= open(file,"r")  
@@ -11,5 +12,4 @@ for file in glob("416-ADH-*.seq"): # Any combination for the file names
         AllSeq= open("AllSeq.seq", "a")
         AllSeq.write(lines)
     f.close()
-AllSeq.close()    
-
+AllSeq.close()  
